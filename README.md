@@ -13,7 +13,7 @@ This course explores the concepts and algorithms at the foundation of modern art
 <br/>
 
 ## Table of contents:
-### [Week 0: Search](/week0)
+### [Week 0: Search](/_pages/cs50_week0.md)
 #### Project 1: Degrees
 
 Click [here](https://cdn.cs50.net/ai/2020/spring/projects/0/degrees.zip and unzip it) for the skeleton code.  
