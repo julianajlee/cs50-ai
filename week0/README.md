@@ -4,4 +4,4 @@
 
 
 
-## Project 2: Minsweeper
+## Project 2: Tic-tac-toe
