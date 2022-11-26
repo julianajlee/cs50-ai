@@ -126,8 +126,175 @@ The end result should look like this:
 #### Project: Crossword
 Click [here](https://cdn.cs50.net/ai/2020/spring/projects/3/crossword.zip) for the skeleton code.  
 <br/>
+The **goal** of this project is to solve a crossword using backtracking search while incoporating and maintaining arc and node consistencies. The end result should look like this:  
+
+      $ python generate.py data/structure1.txt data/words1.txt output.png
+      ██████████████
+      ███████M████R█
+      █INTELLIGENCE█
+      █N█████N████S█
+      █F██LOGIC███O█
+      █E█████M████L█
+      █R███SEARCH█V█
+      ███████X████E█
+      ██████████████
+
+Key is consistency! Make sure the assignment of words to grid variables are consisten in nodes and edges.  
 
 
-### Week 4: Learning
-### Week 5: Neural networks
-### Week 6: Languages
+### [Week 4: Learning](/week4)
+#### Project 1: Shopping
+Click [here](https://cdn.cs50.net/ai/2020/spring/projects/4/shopping.zip) for the skeleton code.
+<br/>
+THe **goal** of this project is to create an AI that predicts whether online shopping customers will complete their purchases. For this project, nearest-neighbour classifier is used train the AI with given datasets. The end result should look like this:  
+
+      $ python shopping.py shopping.csv
+      Correct: 4088
+      Incorrect: 844
+      True Positive Rate: 41.02%
+      True Negative Rate: 90.55%
+
+#### Project 2: Nim
+Click [here](https://cdn.cs50.net/ai/2020/spring/projects/4/nim.zip) for the skeleton code.
+<br/>
+The **goal** of this project is to train a model using Reinforcement Learning. The AI will play against itself, and if it wins it will reward itself but if it loses, it will punish itself. How cruel!  
+The key is to use Q-Learning where losing results in -1 and winning results in 1. Recall that Q-learning formula is: Q(s, a) <- old value estimate + alpha * (new value estimate - old value estimate).  The end result should look like this:
+
+      
+
+      $ python play.py
+      Playing training game 1
+      Playing training game 2
+      Playing training game 3
+      ...
+      Playing training game 9999
+      Playing training game 10000
+      Done training
+      
+      Piles:
+      Pile 0: 1
+      Pile 1: 3
+      Pile 2: 5
+      Pile 3: 7
+      
+      Your Turn
+      Choose Pile: 1
+      Choose Count: 3
+      
+      Piles:
+      Pile 0: 1
+      Pile 1: 0
+      Pile 2: 5
+      Pile 3: 7
+      
+      AI's Turn
+      AI chose to take 7 from pile 3.
+      
+      Piles:
+      Pile 0: 1
+      Pile 1: 0
+      Pile 2: 5
+      Pile 3: 0
+      
+      Your Turn
+      Choose Pile: 2
+      Choose Count: 5
+      
+      Piles:
+      Pile 0: 1
+      Pile 1: 0
+      Pile 2: 0
+      Pile 3: 0
+      
+      AI's Turn
+      AI chose to take 1 from pile 0.
+      
+      GAME OVER
+      Winner is Human
+      # I actually won here, which never happened to me before
+      # But it shows that reinforcement learning is not ideal
+      # as the model could not train for ALL possible outcomes
+
+
+
+### [Week 5: Neural networks](/week5)
+Click [here](https://cdn.cs50.net/ai/2020/x/projects/5/traffic.zip) for the skeleton code.
+<br/>
+The **goal** of this project is to use provided images to train a neural network that classifies road signs. It mimics convolutional neural network and we build an efficient network using the concept of convolutional and pooling layers. It is recommended to experiment with:  
+      - different numbers of convolutional and pooling layers
+      - different numbers and sizes of filters for convolutional layers
+      - different pool sizes for pooling layers
+      - different numbers and sizes of hidden layers
+      - dropout  
+The final result should look like this:  
+
+
+    
+      $ python traffic.py gtsrb/
+      Epoch 1/10
+      497/497 [==============================] - 3s 7ms/step - loss: 2.8686 - accuracy: 0.3052 
+      Epoch 2/10
+      497/497 [==============================] - 4s 7ms/step - loss: 1.1733 - accuracy: 0.6533
+      Epoch 3/10
+      497/497 [==============================] - 4s 8ms/step - loss: 0.6370 - accuracy: 0.8115
+      Epoch 4/10
+      497/497 [==============================] - 4s 8ms/step - loss: 0.4136 - accuracy: 0.8793
+      Epoch 5/10
+      497/497 [==============================] - 4s 8ms/step - loss: 0.2983 - accuracy: 0.9171
+      Epoch 6/10
+      497/497 [==============================] - 4s 8ms/step - loss: 0.2715 - accuracy: 0.9251
+      Epoch 7/10
+      497/497 [==============================] - 4s 8ms/step - loss: 0.2239 - accuracy: 0.9393
+      Epoch 8/10
+      497/497 [==============================] - 4s 8ms/step - loss: 0.1857 - accuracy: 0.9497
+      Epoch 9/10
+      497/497 [==============================] - 4s 8ms/step - loss: 0.1619 - accuracy: 0.9581
+      Epoch 10/10
+      497/497 [==============================] - 4s 8ms/step - loss: 0.1507 - accuracy: 0.9604
+      331/331 - 1s - loss: 0.1485 - accuracy: 0.9654
+
+
+
+
+### [Week 6: Languages](/week6)
+#### [Project 1: Parser](/week6/parser)
+Click [here](https://cdn.cs50.net/ai/2020/spring/projects/6/parser.zip) for the skeleton code.  
+<br/>
+The **goal** of this project is to generate an AI that parses sentences and extract noun phrases. Tip is to deconstruct the sentences into a list of words. Then, build a set of rules that lets us to parse all sentences. The end result should look something like this:  
+      
+      
+      
+      $ python parser.py
+      Sentence: Holmes sat.
+              S
+         _____|___
+        NP        VP
+        |         |
+        N         V
+        |         |
+      holmes     sat
+
+      Noun Phrase Chunks
+      holmes
+
+
+#### [Project 2: Questions](/week6/questions)
+Click [here](https://cdn.cs50.net/ai/2020/spring/projects/6/questions.zip) for the skeleton code.
+<br/>
+The **goal** of this project... is to generate an AI that answers questions. Pretty straight forward, eh? With the given texts, the AI should answer questions based on the concept of Inverse Document Frequency. The end result should look something like this:
+      $ python questions.py corpus
+      Query: What are the types of supervised learning?
+      Types of supervised learning algorithms include Active learning , classification and regression.
+      
+      $ python questions.py corpus
+      Query: When was Python 3.0 released?
+      Python 3.0 was released on 3 December 2008.
+      
+      $ python questions.py corpus
+      Query: How do neurons connect in a neural network?
+      Neurons of one layer connect only to neurons of the immediately preceding and immediately following layers.
+      
+
+<br/>
+<br/>
+**Good luck!!**
