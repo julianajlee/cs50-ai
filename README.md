@@ -12,7 +12,6 @@ This course explores the concepts and algorithms at the foundation of modern art
 
 <br/>
 
-## Table of contents:
 ### [Week 0: Search](/_pages/cs50_week0.md)
 #### Project 1: Degrees
 
